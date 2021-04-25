@@ -1,0 +1,26 @@
+html, body{
+  height: 100%;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+body{
+  background: rgb(50,185,171);
+  background: linear-gradient(180deg, rgba(50,185,171,1) 0%, rgba(107,224,184,0) 100%);
+}
+
+.container{
+  width:46%;
+}
+
+.btn:hover{
+  background: #00d7b3;
+  
+}
+
+#liveDisplay, #category, #hint{
+  color: rgb(255, 251, 0);
+}
+
+#liveDisplay{
+  font-size: larger;
+}
