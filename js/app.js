@@ -21,6 +21,7 @@ var category = ["Rock Band", "Comic Characters", "Coding.BN", "Car Brand", "Poke
 var winAudio = new Audio("audio/win.mp3");
 var loseAudio = new Audio("audio/lose.mp3");
 
+//let score = document.getElementById("score").innerHTML;
 let answer = "";
 let live = 5;
 let question = [];
@@ -37,7 +38,6 @@ function randomWord(){
   
   //display the category and hint
   document.getElementById("category").innerHTML = category[scate].toUpperCase();
-  
   document.getElementById("hint").innerHTML = hint[scate][test].toUpperCase();
 }
 
@@ -67,6 +67,7 @@ function handleGuess(chosenLetter) {
     gameWon();
   } else if (answer.indexOf(chosenLetter) === -1) {
     document.getElementById(chosenLetter).style.backgroundColor = "rgb(153, 0, 0)";
+    document.getElementById(chosenLetter).disabled = true;
     live--;
     chances();
     gameLost();
@@ -77,6 +78,11 @@ function handleGuess(chosenLetter) {
 function gameWon() {
   if (wordQuest === answer) {
     document.getElementById("button").innerHTML = "You Win!";
+    let currentScore = Number(document.getElementById("score").innerHTML);
+    let total = currentScore + 10;
+    document.getElementById("score").innerHTML = total;
+    //console.log(currentScore);
+    //console.log(total);
     winAudio.play();
   }
 }
@@ -85,6 +91,14 @@ function gameLost() {
   if (live === 0) {
     document.getElementById("word").innerHTML = "The answer was: " + answer;
     document.getElementById("button").innerHTML = "You Lost!";
+    let currentScore = Number(document.getElementById("score").innerHTML);
+    if (currentScore <= 0){
+      document.getElementById("score").innerHTML = 0;
+    }else{
+      let total = currentScore - 10;
+      document.getElementById("score").innerHTML = total;
+    }
+
     loseAudio.play();
   }
 }
