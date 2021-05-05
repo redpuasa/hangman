@@ -17,10 +17,13 @@ body{
   
 }
 
-#liveDisplay, #category, #hint{
+#liveDisplay, #category, #hint, #score{
   color: rgb(255, 251, 0);
 }
 
 #liveDisplay{
   font-size: larger;
 }
+
+#green{color:green;}
+#maroon{color:maroon;}
