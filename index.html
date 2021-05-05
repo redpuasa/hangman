@@ -14,30 +14,56 @@
 
   <body>
 
-    <header>
+   <!-- <header>
       <h1 class="text-center m-5">Hangman</h1>
-    </header>
+    </header>-->
 
     <main>
-      <div class="container">
-  
-        <div class="text-center">
 
-          <div class="mb-4"><span id="liveDisplay" class="mr-2">5</span>chance left.</div>
-          
-          <div class="mb-4">Category: <span id="category"></span></div>
-          
-          <div class="mb-4">Hint: <span id="hint"></span></div>
-          
-          <div class="mb-4" id="word"></div>
-          
-          <div class="mb-4 mt-4" id="button"></div>
-          
-          <button class="btn" id="clear">Reset</button>
-          
-        </div> 
-        
+      <div class="container-fluid">
+        <div class="row">
+
+          <div class="col-sm-2">
+            <h2 class="text-center mt-5 p-5">Instruction</h2>
+              <ul>
+                <li>You only have 5 tries per word.</li>
+                <li>Each correct guess score will be added 10 points.</li>
+                <li>Each incorrect guess score will be deducted by 10 points.</li>
+              </ul>
+          </div>
+
+          <div class="col-sm-10">
+
+            <div class="container">
+
+              <h1 class="text-center m-5">Hangman</h1>
+  
+              <div class="text-center">
+      
+                <div class="mb-4">Score: <span id="score"> 0</span></div>
+      
+                <div class="mb-4"><span id="liveDisplay" class="mr-2">5</span>chance left.</div>
+                
+                <div class="mb-4">Category: <span id="category"></span></div>
+                
+                <div class="mb-4">Hint: <span id="hint"></span></div>
+                
+                <div class="mb-4" id="word"></div>
+                
+                <div class="mb-4 mt-4" id="button"></div>
+                
+                <button class="btn" id="clear">Reset</button>
+                
+              </div> 
+              
+            </div>
+
+          </div>
+
+        </div>
       </div>
+
+      
     </main>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
